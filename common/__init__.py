@@ -1,0 +1,3 @@
+from common import const
+const.__setattr__("UNSIGN_KEY", "hesdjaslf54asj1fkl10jaslfjslsdlj")
+const.__setattr__("SALT", "aYmW2uTaoeKQj6upJyTTxkgGTrsaz8YQecFhMhp1J7eDEVBBxFbhpuDYSPcKbSJpo3MhAnLCi0kzgMb6Z0L36RBTIQx6eO0ZxXoKjtak2I8xjdSgNeTjhPsGB1ITYOxC")

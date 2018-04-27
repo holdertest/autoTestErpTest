@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180426 16:54:56.066" generator="Robot 3.0.3 (Python 2.7.9 on win32)">
+<suite source="E:\workplace\code\autoTestErp" id="s1" name="autoTestErp">
+<suite source="E:\workplace\code\autoTestErp\testcase" id="s1-s1" name="Testcase">
+<suite source="E:\workplace\code\autoTestErp\testcase\test_login.robot" id="s1-s1-s1" name="Test Login">
+<test id="s1-s1-s1-t1" name="case1">
+<kw name="Login" library="Login">
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20180426 16:54:56.260" level="INFO">login success</msg>
+<msg timestamp="20180426 16:54:56.261" level="INFO">${headers} = {'Content-Length': '425', 'User-Agent': 'okhttp/3.9.0', 'Connection': 'Keep-Alive', 'Host': '115.29.175.3:82', 'Accept-Encoding': 'gzip'}</msg>
+<status status="PASS" endtime="20180426 16:54:56.261" starttime="20180426 16:54:56.175"></status>
+</kw>
+<status status="PASS" endtime="20180426 16:54:56.261" critical="yes" starttime="20180426 16:54:56.174"></status>
+</test>
+<test id="s1-s1-s1-t2" name="case2">
+<kw name="Login" library="Login">
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20180426 16:54:56.351" level="INFO">login success</msg>
+<msg timestamp="20180426 16:54:56.351" level="INFO">${headers} = {'Content-Length': '425', 'User-Agent': 'okhttp/3.9.0', 'Connection': 'Keep-Alive', 'Host': '115.29.175.3:82', 'Accept-Encoding': 'gzip'}</msg>
+<status status="PASS" endtime="20180426 16:54:56.351" starttime="20180426 16:54:56.262"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>${l1}</var>
+</assign>
+<msg timestamp="20180426 16:54:56.352" level="INFO">${l1} = []</msg>
+<status status="PASS" endtime="20180426 16:54:56.352" starttime="20180426 16:54:56.351"></status>
+</kw>
+<kw name="Generate All Rule" library="Generator">
+<doc>#生成任意字符串</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20180426 16:54:56.353" level="INFO">${string} = 9l\e94Y2</msg>
+<status status="PASS" endtime="20180426 16:54:56.353" starttime="20180426 16:54:56.352"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${l1}</arg>
+<arg>${string}</arg>
+</arguments>
+<status status="PASS" endtime="20180426 16:54:56.353" starttime="20180426 16:54:56.353"></status>
+</kw>
+<kw name="Generate All Rule" library="Generator">
+<doc>#生成任意字符串</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<assign>
+<var>${string}</var>
+</assign>
+<msg timestamp="20180426 16:54:56.354" level="INFO">${string} = &lt;68`10X~</msg>
+<status status="PASS" endtime="20180426 16:54:56.354" starttime="20180426 16:54:56.354"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${l1}</arg>
+<arg>${string}</arg>
+</arguments>
+<status status="PASS" endtime="20180426 16:54:56.355" starttime="20180426 16:54:56.354"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${l1}</arg>
+</arguments>
+<msg timestamp="20180426 16:54:56.355" level="INFO">['9l\\e94Y2', '&lt;68`10X~']</msg>
+<status status="PASS" endtime="20180426 16:54:56.355" starttime="20180426 16:54:56.355"></status>
+</kw>
+<status status="PASS" endtime="20180426 16:54:56.356" critical="yes" starttime="20180426 16:54:56.262"></status>
+</test>
+<status status="PASS" endtime="20180426 16:54:56.356" starttime="20180426 16:54:56.106"></status>
+</suite>
+<status status="PASS" endtime="20180426 16:54:56.358" starttime="20180426 16:54:56.104"></status>
+</suite>
+<status status="PASS" endtime="20180426 16:54:56.359" starttime="20180426 16:54:56.085"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="autoTestErp" pass="2">autoTestErp</stat>
+<stat fail="0" id="s1-s1" name="Testcase" pass="2">autoTestErp.Testcase</stat>
+<stat fail="0" id="s1-s1-s1" name="Test Login" pass="2">autoTestErp.Testcase.Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
