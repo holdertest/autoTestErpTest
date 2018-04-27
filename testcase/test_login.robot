@@ -1,14 +1,13 @@
 *** Settings ***
 Library           Collections
-Library           ../story/Warehouse.py
-Library           ../common/Login.py
+Library           ../apitest/HardwareRelate.py
 Library           ../common/Generator.py
 
 *** Variables ***
 
 *** Test Cases ***
 case1
-    ${headers}=    login
+    ${headers}=    authorizecheck
 
 case2
     ${headers}=    login
@@ -19,5 +18,4 @@ case2
     append to list    ${l1}    ${string}
     log    ${l1}
 
-case3
 *** Keywords ***

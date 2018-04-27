@@ -1,4 +1,4 @@
-from story.Warehouse import warehouse
+from apitest.Warehouse import warehouse
 
 version = '1.0'
 

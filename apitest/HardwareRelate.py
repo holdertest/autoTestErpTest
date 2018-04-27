@@ -3,29 +3,29 @@
 import requests
 import urllib
 from config import config
-import Generator as gen
+from common.Generator import Generator
 from TestData import TestData
 
 
-class Login(object):
+class HardwareRelate(object):
     _instance = None
 
     def __init__(self):
         # 创建测试套件
         self.config = config
-        self.generator = gen.Generator()
+        self.generator = Generator()
         self.set_cookie = ""
         self.headers = self.config.headers
         self.testdata = TestData
 
     def __new__(cls, *args, **kwargs):
-        if Login._instance is None:
-            Login._instance = object.__new__(cls, *args, **kwargs)
-            super(Login, cls).__init__(cls)
-        return Login._instance
+        if HardwareRelate._instance is None:
+            HardwareRelate._instance = object.__new__(cls, *args, **kwargs)
+            super(HardwareRelate, cls).__init__(cls)
+        return HardwareRelate._instance
 
     # 定义变量
-    def login(self):
+    def AuthorizeCheck(self):
         r = requests.post(self.config.url_login, urllib.quote(self.generator.convert(self.testdata.AuthorizeCheck)),
                           headers=self.config.headers)
         try:
@@ -36,3 +36,4 @@ class Login(object):
         # self.set_cookie = r.headers['Set-Cookie']
         # self.headers.setdefault("Cookie", self.set_cookie)
         return self.headers
+

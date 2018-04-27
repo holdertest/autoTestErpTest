@@ -5,7 +5,11 @@ Created on 2017年9月29日
 
 @author: holder
 '''
-import string, random
+import string
+import json
+import hashlib
+import random
+from config import config
 
 class Generator(object):
     """
@@ -39,6 +43,7 @@ class Generator(object):
         self.SPECIAL_LIST = [i for i in string.punctuation]
         self.CHAR_LIST = [i for i in string.letters]
         self.NUMBER_LIST = [i for i in string.digits]
+        self.config = config
         
         self.LIST_MODEL = [self.SPECIAL_LIST, self.CHAR_LIST, self.NUMBER_LIST]
     
@@ -406,6 +411,41 @@ class Generator(object):
                 
         return str_value
 
+    def convert(self, string):
+        str = json.dumps(string, ensure_ascii=False, encoding='UTF-8')
+        jsonSigned = self.sign(str, self.config.UNSIGN_KEY) + "$" + str
+        return jsonSigned
+
+    def sign(self, str, key):
+        str = str.lower()
+        str = str + "&key=" + key
+        return self.getmd5hash(str)
+
+    def getmd5hash(self, str):
+        m1 = hashlib.md5()
+        m1.update(str.encode(encoding='utf-8'))
+        return m1.hexdigest()
+
+    def get_str(self, min, max):
+        s1 = tuple(
+            ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+             "v",
+             "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+             "R",
+             "S",
+             "T", "U", "V", "W", "X", "Y", "Z"))
+        str = ""
+        num = random.randint(0, max) % (max - min + 1) + min
+        for index in range(num):
+            num1 = random.randint(0, len(s1)) % (len(s1) - 1)
+            str = str + s1[num1]
+        return str
+
+    def check_status(self, status):
+        if status != 200:
+            raise AssertionError('%s != 200' % status)
+        else:
+            print "login success"
 
 if __name__ == "__main__":
     s = Generator()
@@ -424,6 +464,5 @@ if __name__ == "__main__":
             ]
         }
     }
-    print "========="
     # kw = s.traversalAllKeyRules(dict1)
     print s.generateAllRule(8)

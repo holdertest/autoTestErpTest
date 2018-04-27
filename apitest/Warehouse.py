@@ -2,7 +2,6 @@
 import requests
 import json
 from common.ErrorJudgment import ErrorJudgment
-# from common.Login import Login
 import config.config as CONFIG
 import TestData.TestData as TestData
 
@@ -43,7 +42,3 @@ class Warehouse(object):
 
 if __name__ == '__main__':
     pass
-    # a = Login()
-    # b = a.login()
-    # w = Warehouse()
-    # w.add_warehouse_type(b)
