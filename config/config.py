@@ -34,7 +34,7 @@ login_data = '''{
         "EquipmentsUID": "04347f2465200cfe",
         "StoreGUID": "5f55e93c-9fa7-41c2-8ed7-ec615681f7fe"
     },
-    # "NonceStr": "DIIhVCaRLwSuIdGE",
+    # "NonceStr": "",
     "PageInfo": {}
  }'''
 login_data2=tool.convert(data)
