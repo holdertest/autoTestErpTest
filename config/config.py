@@ -9,6 +9,6 @@ headers = {'Content-Length': '425',
 UNSIGN_KEY = "hesdjaslf54asj1fkl10jaslfjslsdlj"
 
 
-url_login = "http://115.29.175.3:82/AIO/Frontend.ashx/"
+url_base = "http://115.29.175.3:82/AIO/Frontend.ashx/"
 url_warehouseAdd = "http://bs01.heserp.com/modules/CKLX/?WarehouseTypeAdd"
 url_warehouseQuery = "http://bs01.heserp.com/modules/CKLX/?WarehouseTypeQuery"

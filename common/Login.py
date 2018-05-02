@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import requests
-import urllib
 from config import config
-import Generator as gen
+import Generator
 from TestData import TestData
 
 
@@ -13,7 +12,7 @@ class Login(object):
     def __init__(self):
         # 创建测试套件
         self.config = config
-        self.generator = gen.Generator()
+        self.generator = Generator()
         self.set_cookie = ""
         self.headers = self.config.headers
         self.testdata = TestData
@@ -26,8 +25,9 @@ class Login(object):
 
     # 定义变量
     def login(self):
-        r = requests.post(self.config.url_login, urllib.quote(self.generator.convert(self.testdata.AuthorizeCheck)),
-                          headers=self.config.headers)
+        r = requests.post(self.config.url_login,
+                          self.generator.convert(self.testdata.AuthorizeCheck),
+                          self.config.headers)
         try:
             self.generator.check_status(r.status_code)
         except:

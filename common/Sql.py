@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pymssql, time
-from getConfig import GetConfig
+from GetConfig import GetConfig
 
 
 class Sql(GetConfig):
