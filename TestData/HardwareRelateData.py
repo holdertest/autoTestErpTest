@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-AuthorizeCheck = {
+GetBinding = {
     "ApiBase": {
         "BackType": "1",
         "Method": "EquipmentsB.GetBinding",
