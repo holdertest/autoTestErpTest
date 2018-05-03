@@ -4,6 +4,7 @@ import requests
 from config import config
 from common.Generator import Generator
 from TestData import TestData, HardwareRelateData
+import json
 
 
 class HardwareRelate(object):
@@ -14,7 +15,6 @@ class HardwareRelate(object):
         self.config = config
         self.generator = Generator()
         # self.set_cookie = ""
-        self.headers = self.config.headers
         self.testdata = TestData
         self.hardwarerelatedata = HardwareRelateData
 
@@ -24,25 +24,49 @@ class HardwareRelate(object):
             super(HardwareRelate, cls).__init__(cls)
         return HardwareRelate._instance
 
-    # 请求接口
+    # 获取一体机设备当前的绑定状态
     def get_binding(self):
         r = requests.post(url=self.config.url_base,
                           data=self.generator.convert(self.hardwarerelatedata.GetBinding),
                           headers=self.config.headers)
         # try:
         #     self.generator.check_status(r.status_code)
-        #     print r.text
         # except:
         #     return False
 
         # self.set_cookie = r.headers['Set-Cookie']
         # self.headers.setdefault("Cookie", self.set_cookie)
+
+        s = json.loads(r.text)
+        self.config.EnterpriseInfoID = s['EnterpriseInfoE']['EnterpriseInfoID']
+        self.config.EnterpriseInfoUID = s['EnterpriseInfoE']['EnterpriseInfoUID']
+        self.config.EnterpriseInfoGUID = s['EnterpriseInfoE']['EnterpriseInfoGUID']
+        return r.text
+
+    # 验证一体机授权使用权限，若验证失败，则不能使用一体机系统
+    def authorize_check(self):
+        r = requests.post(url=self.config.url_base,
+                          data=self.generator.convert(self.hardwarerelatedata.AuthorizeCheck),
+                          headers=self.config.headers)
+        s = json.loads(r.text)
+        self.config.EnterpriseInfoID = s['EnterpriseInfoE']['EnterpriseInfoID']
+        self.config.EnterpriseInfoUID = s['EnterpriseInfoE']['EnterpriseInfoUID']
+        self.config.EnterpriseInfoGUID = s['EnterpriseInfoE']['EnterpriseInfoGUID']
+        return r.text
+
+    # 获取一体机的绑定、设备状态等信息
+    def get_info(self):
+        r = requests.post(url=self.config.url_base,
+                          data=self.generator.convert(
+                              self.generator.update_enterpriseinfoe(self.hardwarerelatedata.GetInfo,
+                                                                    'EnterpriseInfoGUID',
+                                                                    self.config.EnterpriseInfoGUID)),
+                          headers=self.config.headers)
         print r.text
-        print r.content
-        print r.headers
         return r.text
 
 
 if __name__ == '__main__':
     h = HardwareRelate()
-    h.get_binding()
+    h.authorize_check()
+    h.get_info()

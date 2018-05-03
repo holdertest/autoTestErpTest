@@ -450,7 +450,7 @@ class Generator(object):
         更新参数中的NonceStr
     '''
     @staticmethod
-    def update_dict(dict1={}, value=''):
+    def update_dict(dict1, value):
         dict1["NonceStr"] = value
         return dict1
 
@@ -461,22 +461,12 @@ class Generator(object):
         else:
             print "login success"
 
-# if __name__ == "__main__":
-#     s = Generator()
-#     dict1 = {
-#         "ErrorCode": 0,
-#         "Data": {
-#             "Code": "CharOnly",
-#             "Data": [
-#                 {
-#                     "MemberGUID": "3a6acca8-95b9-49d8-87ed-061571218ffc",
-#                     "MemberName": "aaa",
-#                     "MemberGroup": 0,
-#                     "MemberStatus": 0,
-#                     "yes": "CharOnly,NumberOnly",
-#                 }
-#             ]
-#         }
-#     }
-#     kw = s.traversalAllKeyRules(dict1)
-#     print s.generateAllRule(8)
+    '''
+        更新接口参数
+    '''
+    def update_enterpriseinfoe(self, data, key, value):
+        data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
+        data['EquipmentsE'][key] = value
+        print data
+        return data
+
