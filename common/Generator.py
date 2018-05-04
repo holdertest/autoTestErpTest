@@ -515,6 +515,5 @@ class Generator(object):
         data['ApiBase']['TerminalType'] = self.config.TerminalType
         data['ApiBase']['Version'] = self.config.Version
         data['AppVersion']['VersionType'] = self.config.VersionType
-
         return data
 

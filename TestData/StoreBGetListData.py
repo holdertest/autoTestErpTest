@@ -3,7 +3,7 @@
 GetList = {
     "ApiBase": {
         "BackType": "",
-        "MerID" : 60571583,
+        "MerID": "",
         "Method": "StoreB.GetList",
         "Model": "FrontendB",
         "TerminalID": "",
