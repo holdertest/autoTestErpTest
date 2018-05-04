@@ -44,3 +44,4 @@ GetInfo
     Should Be Equal As Strings    ${NoteMsg}    业务成功
 
 *** Keywords ***
+登录

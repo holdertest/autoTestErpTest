@@ -430,6 +430,7 @@ class Generator(object):
     '''
         获取NonceStr
     '''
+
     @staticmethod
     def get_nonceStr(num_min, num_max):
         s1 = tuple(
@@ -449,6 +450,7 @@ class Generator(object):
     '''
         更新参数中的NonceStr
     '''
+
     @staticmethod
     def update_dict(dict1, value):
         dict1["NonceStr"] = value
@@ -462,11 +464,58 @@ class Generator(object):
             print "login success"
 
     '''
-        更新接口参数
+        更新接口EquipmentsE中的参数
     '''
+
     def update_enterpriseinfoe(self, data, key, value):
         data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
         data['EquipmentsE'][key] = value
         print data
+        return data
+
+    '''
+        更新接口一级参数
+    '''
+
+    @staticmethod
+    def update_firstlevelparameters(data, key, value):
+        data[key] = value
+        return data
+
+    '''
+        更新接口二级参数
+    '''
+    @staticmethod
+    def update_secondlevelparameters(data, second, key, value):
+        data[second][key] = value
+        return data
+
+    '''
+        更新接口三级参数
+    '''
+
+    @staticmethod
+    def update_thirdlevelparameters(data, second, third, key, value):
+        data[second][third][key] = value
+        return data
+
+    '''
+        接口返回的字符串转化成字典
+    '''
+    @staticmethod
+    def parse_response(data):
+        return json.loads(data)
+
+    '''
+        设置默认参数
+    '''
+    def set_default_params(self, data):
+        data['ApiBase']['TerminalID'] = self.config.TerminalID
+        data['ApiBase']['BackType'] = self.config.BackType
+        data['ApiBase']['Model'] = self.config.Model
+        data['ApiBase']['TerminalType'] = self.config.TerminalType
+        data['ApiBase']['Version'] = self.config.Version
+        data['AppVersion']['VersionType'] = self.config.VersionType
+        data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
         return data
 

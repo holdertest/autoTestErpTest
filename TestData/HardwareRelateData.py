@@ -5,7 +5,7 @@ GetBinding = {
         "BackType": "1",
         "Method": "EquipmentsB.GetBinding",
         "Model": "FrontendB_Public",
-        "TerminalID": "04347f2465200cfe",
+        "TerminalID": "",
         "TerminalType": 20,
         "Version": 0
     },
@@ -13,7 +13,7 @@ GetBinding = {
         "VersionType": 1
     },
     "EquipmentsE": {
-        "EquipmentsUID": "04347f2465200cfe"
+        "EquipmentsUID": ""
     },
     "NonceStr": "",
     "PageInfo": {}
@@ -24,7 +24,7 @@ AuthorizeCheck = {
         "BackType": "1",
         "Method": "EquipmentsB.AuthorizeCheck",
         "Model": "FrontendB_Public",
-        "TerminalID": "04347f2465200cfe",
+        "TerminalID": "",
         "TerminalType": 20,
         "Version": 0
     },
@@ -32,7 +32,7 @@ AuthorizeCheck = {
         "VersionType": 1
     },
     "EquipmentsE": {
-        "EquipmentsUID": "04347f2465200cfe"
+        "EquipmentsUID": ""
     },
     "NonceStr": "",
     "PageInfo": {}
@@ -40,10 +40,10 @@ AuthorizeCheck = {
 
 GetInfo = {
     "ApiBase": {
-        "BackType": "1",
+        "BackType": "",
         "Method": "EquipmentsB.GetInfo",
-        "Model": "FrontendB_Public",
-        "TerminalID": "04347f2465200cfe",
+        "Model": "",
+        "TerminalID": "",
         "TerminalType": 20,
         "Version": 0
     },
