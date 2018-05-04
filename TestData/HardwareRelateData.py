@@ -42,7 +42,7 @@ GetInfo = {
     "ApiBase": {
         "BackType": "",
         "Method": "EquipmentsB.GetInfo",
-        "Model": "",
+        "Model": "FrontendB_Public",
         "TerminalID": "",
         "TerminalType": 20,
         "Version": 0

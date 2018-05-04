@@ -11,7 +11,6 @@ url_base = "http://115.29.175.3:82/AIO/Frontend.ashx/"
 
 # ApiBase
 BackType = "1"
-Model = "FrontendB_Public"
 TerminalID = "04347f2465200cfe"
 TerminalType = 20
 Version = 0

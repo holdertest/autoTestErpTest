@@ -512,10 +512,9 @@ class Generator(object):
     def set_default_params(self, data):
         data['ApiBase']['TerminalID'] = self.config.TerminalID
         data['ApiBase']['BackType'] = self.config.BackType
-        data['ApiBase']['Model'] = self.config.Model
         data['ApiBase']['TerminalType'] = self.config.TerminalType
         data['ApiBase']['Version'] = self.config.Version
         data['AppVersion']['VersionType'] = self.config.VersionType
-        data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
+
         return data
 
