@@ -13,74 +13,41 @@ Library           ../apitest/DishesTypeBGetList.py
 *** Test Cases ***
 EquipmentsBGetBinding
     ${data}    equipmentsb_getbinding
-    ${data}    Loads    ${data}
-    ${ApiNote}    Get From Dictionary    ${data}    ApiNote
-    log    ${ApiNote}
-    ${ResultMsg}    Get From Dictionary    ${ApiNote}    ResultMsg
-    ${NoteMsg}    Get From Dictionary    ${ApiNote}    NoteMsg
-    log    ${ResultMsg}
-    log    ${NoteMsg}
-    Should Be Equal    ${ResultMsg}    成功
-    Should Be Equal As Strings    ${NoteMsg}    OK
+    ResultCheck    ${data}    成功    OK
 
 EquipmentsBAuthorizeCheck
     ${data}    equipmentsb_authorizecheck
-    ${data}    Loads    ${data}
-    ${ApiNote}    Get From Dictionary    ${data}    ApiNote
-    log    ${ApiNote}
-    ${ResultMsg}    Get From Dictionary    ${ApiNote}    ResultMsg
-    ${NoteMsg}    Get From Dictionary    ${ApiNote}    NoteMsg
-    log    ${ResultMsg}
-    log    ${NoteMsg}
-    Should Be Equal    ${ResultMsg}    成功
-    Should Be Equal As Strings    ${NoteMsg}    OK
+    ResultCheck    ${data}    成功    OK
 
 EquipmentsBGetInfo
     ${data}    equipmentsb_getinfo
-    ${data}    Loads    ${data}
-    ${ApiNote}    Get From Dictionary    ${data}    ApiNote
-    log    ${ApiNote}
-    ${ResultMsg}    Get From Dictionary    ${ApiNote}    ResultMsg
-    ${NoteMsg}    Get From Dictionary    ${ApiNote}    NoteMsg
-    log    ${ResultMsg}
-    log    ${NoteMsg}
-    Should Be Equal As Strings    ${ResultMsg}    业务成功
-    Should Be Equal As Strings    ${NoteMsg}    业务成功
+    ResultCheck    ${data}    业务成功    业务成功
 
 StoreBGetList
     ${data}    storeb_getlist
-    ${data}    Loads    ${data}
-    ${ApiNote}    Get From Dictionary    ${data}    ApiNote
-    log    ${ApiNote}
-    ${ResultMsg}    Get From Dictionary    ${ApiNote}    ResultMsg
-    ${NoteMsg}    Get From Dictionary    ${ApiNote}    NoteMsg
-    log    ${ResultMsg}
-    log    ${NoteMsg}
-    Should Be Equal    ${ResultMsg}    成功
-    Should Be Equal As Strings    ${NoteMsg}    OK
+    ResultCheck    ${data}    成功    OK
 
 UserBNewLogin
     ${data}    userb_newlogin
-    ${data}    Loads    ${data}
-    ${ApiNote}    Get From Dictionary    ${data}    ApiNote
-    log    ${ApiNote}
-    ${ResultMsg}    Get From Dictionary    ${ApiNote}    ResultMsg
-    ${NoteMsg}    Get From Dictionary    ${ApiNote}    NoteMsg
-    log    ${ResultMsg}
-    log    ${NoteMsg}
-    Should Be Equal    ${ResultMsg}    成功
-    Should Be Equal As Strings    ${NoteMsg}    OK：查询成功
+    ResultCheck    ${data}    成功    OK：查询成功
 
 DishesTypeBGetList
     ${data}    dishestypeb_getlist
-    ${data}    Loads    ${data}
+    ResultCheck    ${data}    成功    OK
+
+test
+    ${data}    dishestypeb_getlist
+    ResultCheck    ${data}    成功    OK
+
+*** Keywords ***
+ResultCheck
+    [Arguments]    ${arg1}    ${arg2}    ${arg3}
+    ${data}    Loads    ${arg1}
     ${ApiNote}    Get From Dictionary    ${data}    ApiNote
     log    ${ApiNote}
     ${ResultMsg}    Get From Dictionary    ${ApiNote}    ResultMsg
     ${NoteMsg}    Get From Dictionary    ${ApiNote}    NoteMsg
     log    ${ResultMsg}
     log    ${NoteMsg}
-    Should Be Equal    ${ResultMsg}    成功
-    Should Be Equal As Strings    ${NoteMsg}    OK
-
-*** Keywords ***
+    Should Be Equal As Strings    ${ResultMsg}    ${arg2}
+    Should Be Equal As Strings    ${NoteMsg}    ${arg3}
