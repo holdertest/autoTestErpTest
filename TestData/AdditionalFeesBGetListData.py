@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-DishesTypeBGetList = {
+AdditionalFeesBGetList = {
+    "AdditionalFeesE": {
+        "EnterpriseInfoGUID": "",
+        "count": 0
+    },
     "ApiBase": {
         "BackType": "1",
         "MerID": "",
-        "Method": "DishesTypeB.GetList",
+        "Method": "AdditionalFeesB.GetList",
         "Model": "FrontendB",
         "TerminalID": "",
         "TerminalType": 20,
@@ -12,15 +16,6 @@ DishesTypeBGetList = {
     },
     "AppVersion": {
         "VersionType": 1
-    },
-    "DishesTypeE": {
-        "StoreGUID": "",
-        "EnterpriseInfoGUID": "",
-        "DishesCount": 0,
-        "Enabled": 1,
-        "IsDefault": 0,
-        "IsDelete": 0,
-        "Sort": 0
     },
     "NonceStr": "",
     "PageInfo": {}

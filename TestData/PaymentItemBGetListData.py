@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
-DishesTypeBGetList = {
+# @Time    : 2018/5/7 0007 14:21
+# @Author  : abel_sheng
+# @File    : PaymentItemBGetListData.py
+# @Software: PyCharm
+
+PaymentItemBGetList = {
     "ApiBase": {
         "BackType": "1",
         "MerID": "",
-        "Method": "DishesTypeB.GetList",
+        "Method": "PaymentItemB.GetList",
         "Model": "FrontendB",
         "TerminalID": "",
         "TerminalType": 20,
@@ -13,15 +18,11 @@ DishesTypeBGetList = {
     "AppVersion": {
         "VersionType": 1
     },
-    "DishesTypeE": {
-        "StoreGUID": "",
-        "EnterpriseInfoGUID": "",
-        "DishesCount": 0,
-        "Enabled": 1,
-        "IsDefault": 0,
-        "IsDelete": 0,
-        "Sort": 0
-    },
     "NonceStr": "",
-    "PageInfo": {}
+    "PageInfo": {},
+    "PaymentItemE": {
+        "EnterpriseInfoGUID": "",
+        "StoreGUID": "",
+        "Sort": 0
+    }
 }

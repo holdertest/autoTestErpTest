@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-DishesTypeBGetList = {
+DishesBGetList = {
     "ApiBase": {
         "BackType": "1",
         "MerID": "",
-        "Method": "DishesTypeB.GetList",
+        "Method": "DishesB.GetList",
         "Model": "FrontendB",
-        "TerminalID": "",
+        "TerminalID": "043d9a1292500cfe",
         "TerminalType": 20,
         "UserGUID": "",
         "Version": 0
@@ -13,14 +13,11 @@ DishesTypeBGetList = {
     "AppVersion": {
         "VersionType": 1
     },
-    "DishesTypeE": {
-        "StoreGUID": "",
+    "DishesE": {
         "EnterpriseInfoGUID": "",
-        "DishesCount": 0,
-        "Enabled": 1,
-        "IsDefault": 0,
-        "IsDelete": 0,
-        "Sort": 0
+        "StoreGUID": "",
+        "isStopSale": False,
+        "DishesCount": 1
     },
     "NonceStr": "",
     "PageInfo": {}

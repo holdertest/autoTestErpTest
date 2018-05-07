@@ -464,16 +464,6 @@ class Generator(object):
             print "login success"
 
     '''
-        更新接口EquipmentsE中的参数
-    '''
-
-    def update_enterpriseinfoe(self, data, key, value):
-        data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
-        data['EquipmentsE'][key] = value
-        print data
-        return data
-
-    '''
         更新接口一级参数
     '''
 

@@ -1,9 +1,14 @@
-# -*- coding: utf-8 -*-
-DishesTypeBGetList = {
+# -*-coding: utf-8 -*-
+AccountRecordBGetCurrent = {
+    "AccountRecordE": {
+        "DeviceID": "",
+        "EnterpriseInfoGUID": "",
+        "StoreGUID": ""
+    },
     "ApiBase": {
         "BackType": "1",
         "MerID": "",
-        "Method": "DishesTypeB.GetList",
+        "Method": "AccountRecordB.GetCurrent",
         "Model": "FrontendB",
         "TerminalID": "",
         "TerminalType": 20,
@@ -12,15 +17,6 @@ DishesTypeBGetList = {
     },
     "AppVersion": {
         "VersionType": 1
-    },
-    "DishesTypeE": {
-        "StoreGUID": "",
-        "EnterpriseInfoGUID": "",
-        "DishesCount": 0,
-        "Enabled": 1,
-        "IsDefault": 0,
-        "IsDelete": 0,
-        "Sort": 0
     },
     "NonceStr": "",
     "PageInfo": {}

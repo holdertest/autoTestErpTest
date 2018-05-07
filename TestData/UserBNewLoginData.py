@@ -13,11 +13,11 @@ NewLogin = {
     "AppVersion": {
         "VersionType": 1
     },
-    "NonceStr": "BpCCKbJbADsDtehTEfPhWJjbY",
+    "NonceStr": "",
     "PageInfo": {},
     "UsersE": {
         "EnterpriseInfoGUID": "",
-        "StoreGUID": "ffc5e034-e3ee-48e7-ba95-679d6fa95e4d",
+        "StoreGUID": "",
         "VersionCode": 24,
         "VersionName": "2.1-外网测试",
         "Number": "10000",

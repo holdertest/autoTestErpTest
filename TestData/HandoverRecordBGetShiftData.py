@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
-DishesTypeBGetList = {
+# -*-coding: utf-8 -*-
+HandoverRecordBGetShift = {
     "ApiBase": {
         "BackType": "1",
         "MerID": "",
-        "Method": "DishesTypeB.GetList",
+        "Method": "HandoverRecordB.GetShift",
         "Model": "FrontendB",
         "TerminalID": "",
         "TerminalType": 20,
@@ -13,14 +13,8 @@ DishesTypeBGetList = {
     "AppVersion": {
         "VersionType": 1
     },
-    "DishesTypeE": {
-        "StoreGUID": "",
-        "EnterpriseInfoGUID": "",
-        "DishesCount": 0,
-        "Enabled": 1,
-        "IsDefault": 0,
-        "IsDelete": 0,
-        "Sort": 0
+    "HandoverRecordE": {
+        "StoreGUID": ""
     },
     "NonceStr": "",
     "PageInfo": {}

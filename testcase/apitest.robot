@@ -7,6 +7,11 @@ Library           ../apitest/EquipmentsBGetInfo.py
 Library           ../apitest/StoreBGetList.py
 Library           ../apitest/UserBNewLogin.py
 Library           ../apitest/DishesTypeBGetList.py
+Library           ../apitest/DishesBGetList.py
+Library           ../apitest/AccountRecordBGetCurrent.py
+Library           ../apitest/HandoverRecordBGetShift.py
+Library           ../apitest/AdditionalFeesBGetList.py
+Library           ../apitest/UsersBGetList.py
 
 *** Variables ***
 
@@ -35,9 +40,25 @@ DishesTypeBGetList
     ${data}    dishestypeb_getlist
     ResultCheck    ${data}    成功    OK
 
-test
-    ${data}    dishestypeb_getlist
+DishesBGetList
+    ${data}    dishesb_getlist
     ResultCheck    ${data}    成功    OK
+
+AdditionalFeesBGetList
+    ${data}    additionalfeesb_getList
+    ResultCheck    ${data}    成功    OK
+
+UsersBGetList
+    ${data}    usersb_getlist
+    ResultCheck    ${data}    成功    OK：查询成功
+
+AccountRecordBGetCurrent
+    ${data}    accountrecordb_getcurrent
+    ResultCheck    ${data}    成功    OK：成功
+
+HandoverRecordBGetShift
+    ${data}    handoverrecordb_getshift
+    ResultCheck    ${data}    业务成功    OK
 
 *** Keywords ***
 ResultCheck

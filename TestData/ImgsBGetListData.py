@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
-DishesTypeBGetList = {
+# @Time    : 2018/5/7 0007 14:29
+# @Author  : abel_sheng
+# @File    : ImgsBGetListData.py
+# @Software: PyCharm
+
+ImgsBGetList = {
     "ApiBase": {
         "BackType": "1",
         "MerID": "",
-        "Method": "DishesTypeB.GetList",
+        "Method": "ImgsB.GetList",
         "Model": "FrontendB",
         "TerminalID": "",
         "TerminalType": 20,
@@ -13,14 +18,10 @@ DishesTypeBGetList = {
     "AppVersion": {
         "VersionType": 1
     },
-    "DishesTypeE": {
-        "StoreGUID": "",
+    "ImgsE": {
+        "CreateType": 100,
         "EnterpriseInfoGUID": "",
-        "DishesCount": 0,
-        "Enabled": 1,
-        "IsDefault": 0,
-        "IsDelete": 0,
-        "Sort": 0
+        "IsHttp": 1
     },
     "NonceStr": "",
     "PageInfo": {}
