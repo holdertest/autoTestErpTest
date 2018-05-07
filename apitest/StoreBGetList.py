@@ -7,7 +7,7 @@ from TestData import StoreBGetListData
 from EquipmentsBGetBinding import EquipmentsBGetBinding
 
 
-class Store(object):
+class StoreBGetList(object):
 
     def __init__(self):
         # 创建测试套件
@@ -17,9 +17,9 @@ class Store(object):
         self.StoreBGetListData = StoreBGetListData
 
     # 获取多个门店
-    def get_list(self):
+    def storeb_getlist(self):
         data = self.generator.set_default_params(self.StoreBGetListData.GetList)
-        get_binding_data = self.generator.parse_response(self.EquipmentsBGetBinding.get_binding())
+        get_binding_data = self.generator.parse_response(self.EquipmentsBGetBinding.equipmentsb_getbinding())
         self.generator.update_secondlevelparameters(data, 'StoreE', 'EnterpriseInfoGUID',
                                                     get_binding_data['EnterpriseInfoE']['EnterpriseInfoGUID'])
         self.generator.update_secondlevelparameters(data, 'ApiBase', 'MerID',
@@ -32,5 +32,5 @@ class Store(object):
 
 
 if __name__ == "__main__":
-    s = Store()
-    s.get_list()
+    s = StoreBGetList()
+    s.storeb_getlist()

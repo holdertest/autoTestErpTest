@@ -15,7 +15,7 @@ class EquipmentsBGetBinding(object):
         self.EquipmentsBGetBindingData = EquipmentsBGetBindingData
 
     # 获取一体机设备当前的绑定状态
-    def get_binding(self):
+    def equipmentsb_getbinding(self):
         data = self.generator.set_default_params(self.EquipmentsBGetBindingData.GetBinding)
         data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
         r = requests.post(url=self.config.url_base,
@@ -27,4 +27,4 @@ class EquipmentsBGetBinding(object):
 
 if __name__ == '__main__':
     h = EquipmentsBGetBinding()
-    h.get_binding()
+    h.equipmentsb_getbinding()

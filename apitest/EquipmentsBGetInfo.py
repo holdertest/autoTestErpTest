@@ -17,10 +17,10 @@ class EquipmentsBGetInfo(object):
         self.EquipmentsBGetBinding = EquipmentsBGetBinding()
 
     # 获取一体机的绑定、设备状态等信息
-    def get_info(self):
+    def equipmentsb_getinfo(self):
         data = self.generator.set_default_params(self.EquipmentsBGetInfoData.GetInfo)
         data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
-        response_data = self.generator.parse_response(self.EquipmentsBGetBinding.get_binding())
+        response_data = self.generator.parse_response(self.EquipmentsBGetBinding.equipmentsb_getbinding())
         self.generator.update_secondlevelparameters(data, 'EquipmentsE', 'EnterpriseInfoGUID',
                                                     response_data['EnterpriseInfoE']['EnterpriseInfoGUID'])
 
@@ -33,4 +33,4 @@ class EquipmentsBGetInfo(object):
 
 if __name__ == '__main__':
     h = EquipmentsBGetInfo()
-    h.get_info()
+    h.equipmentsb_getinfo()

@@ -15,7 +15,7 @@ class EquipmentsBAuthorizeCheck(object):
         self.EquipmentsBAuthorizeCheckData = EquipmentsBAuthorizeCheckData
 
     # 验证一体机授权使用权限，若验证失败，则不能使用一体机系统
-    def authorize_check(self):
+    def equipmentsb_authorizecheck(self):
         data = self.generator.set_default_params(self.EquipmentsBAuthorizeCheckData.AuthorizeCheck)
         data['EquipmentsE']['EquipmentsUID'] = self.config.EquipmentsUID
         r = requests.post(url=self.config.url_base,
@@ -27,4 +27,4 @@ class EquipmentsBAuthorizeCheck(object):
 
 if __name__ == '__main__':
     h = EquipmentsBAuthorizeCheck()
-    h.authorize_check()
+    h.equipmentsb_authorizecheck()
