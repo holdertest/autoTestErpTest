@@ -22,6 +22,8 @@ class EquipmentsBGetBinding(object):
                           data=self.generator.convert(data),
                           headers=self.config.headers)
         print 'get_binding= ' + r.text
+        # self.set_cookie = r.headers['Set-Cookie']
+        # self.headers.setdefault("Cookie", self.set_cookie)
         return r.text
 
 
